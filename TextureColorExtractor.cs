@@ -31,7 +31,7 @@ namespace Littlstar.Utility {
 		/// </summary>
 		/// <returns>The average color</returns>
 		/// <param name="colors">Average color of the array</param>
-		public static Color GetDominantColor(Color[] colors) {
+		public static Color GetAverageColor(Color[] colors) {
 			int pixelCount = colors.Length;
 			float r = 0f, g = 0f, b = 0f;
 			foreach (Color color in colors) {
