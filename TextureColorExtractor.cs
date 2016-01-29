@@ -12,7 +12,7 @@ namespace Littlstar.Utility {
 		/// </summary>
 		/// <returns>The average color</returns>
 		/// <param name="texture">Texture object to find the average color of</param>
-		public static Color GetAvergaeColor (Texture texture) {
+		public static Color GetAverageColor (Texture texture) {
 			Texture2D t = texture as Texture2D;
 			return GetDominantColor (t.GetPixels ());
 		}
