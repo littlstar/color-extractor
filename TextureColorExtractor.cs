@@ -14,7 +14,7 @@ namespace Littlstar.Utility {
 		/// <param name="texture">Texture object to find the average color of</param>
 		public static Color GetAverageColor (Texture texture) {
 			Texture2D t = texture as Texture2D;
-			return GetDominantColor (t.GetPixels ());
+			return GetAverageColor (t.GetPixels ());
 		}
 
 		/// <summary>
@@ -23,7 +23,7 @@ namespace Littlstar.Utility {
 		/// <returns>The average color</returns>
 		/// <param name="texture">Texture2D object to find the average color of</param>
 		public static Color GetAverageColor (Texture2D texture) {
-			return GetDominantColor (texture.GetPixels ());
+			return GetAverageColor (texture.GetPixels ());
 		}
 
 		/// <summary>
@@ -48,8 +48,8 @@ namespace Littlstar.Utility {
 			g = Mathf.Round (g * COLOR_MULTIPLIER);
 			b = Mathf.Round (b * COLOR_MULTIPLIER);
 
-			Color dominantColor = new Color (r, g, b, 1f);
-			return dominantColor;
+			Color averageColor = new Color (r, g, b, 1f);
+			return averageColor;
 		}
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace Littlstar.Utility {
 		public static Color GetAverageColorFromRect(Texture texture, Rect pixelBlock) {
 			Texture2D t = texture as Texture2D;
 			Color[] pixels = GetRectPixelsFromTexture (t, pixelBlock);
-			return GetDominantColor (pixels);
+			return GetAverageColor (pixels);
 		}
 
 		/// <summary>
@@ -72,7 +72,7 @@ namespace Littlstar.Utility {
 		/// <param name="pixelBlock">Rect on the texture to find the average of</param>
 		public static Color GetAverageColorFromRect(Texture2D texture, Rect pixelBlock) {
 			Color[] pixels = GetRectPixelsFromTexture (texture, pixelBlock);
-			return GetDominantColor (pixels);
+			return GetAverageColor (pixels);
 		}
 			
 		private static Color[] GetRectPixelsFromTexture(Texture2D texture, Rect pixelBlock) {
